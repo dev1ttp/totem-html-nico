@@ -1,0 +1,155 @@
+@import "variables.scss";
+@import "fonts.scss";
+@import "mixins.scss";
+@import "button.scss";
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    text-align: center;
+    margin: 0 auto;
+    background-color: $color-secundary;
+    overflow: hidden;
+}
+
+header {
+    height: 6em;
+    margin-bottom: 100px;
+}
+
+h1 {
+    font-size: $font-big;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900
+}
+
+.welcome {
+    margin: 500px auto 400px;
+    text-align: center;
+    text-justify: auto;
+    width: 80%;
+    z-index: 9000;
+    &-text {
+        font-family: 'roboto';
+        font-weight: 100;
+        color: $color-primary;
+        font-size: $font-big;
+    }
+    .word {
+        font-family: 'Roboto';
+        font-weight: 900;
+        color: $color-primary;
+        font-size: $font-big;
+        line-height: 100%;
+        height: 1.4em;
+        padding: 0 14px 0 7px;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+    }
+}
+
+.menu {
+    color: $color-primary;
+    margin: 200px auto 200px;
+    font-family: 'Roboto';
+}
+
+.logo {
+    width: 280px;
+    margin: 0 auto;
+    padding-top: 40px;
+    &-index {
+        width: 400px;
+        margin: 100px auto
+    }
+}
+
+.anim {
+    &:hover span {
+        padding-right: 25px;
+        &:after {
+            opacity: 1;
+            right: 0;
+        }
+    }
+    span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+         :after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+    }
+}
+
+footer {
+    background-color: $color-primary;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+}
+
+
+/* ---- stats.js ---- */
+
+.count-particles {
+    background: #000022;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 80px;
+    color: #13E8E9;
+    font-size: .8em;
+    text-align: left;
+    text-indent: 4px;
+    line-height: 14px;
+    padding-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.js-count-particles {
+    font-size: 1.1em;
+}
+
+#stats,
+.count-particles {
+    -webkit-user-select: none;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#stats {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+.count-particles {
+    border-radius: 0 0 3px 3px;
+}
+
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+    width: 100%;
+    height: 100%;
+    /* background-color: #b61924; */
+    background-image: url('');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: fixed;
+}
+
+@import "responsive.scss";

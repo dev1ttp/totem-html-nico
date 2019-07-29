@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome/all.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Totem prueba</title>
+</head>
+
+<body onload="init();">
+    <a href="menu.html">
+        <div id="particles-js"> </div>
+
+        <header>
+            <div class="header text-center ">
+                <div class="logo-index">
+                    <a href="# "><img src="img/ttp-white.svg "></a>
+                </div>
+
+            </div>
+        </header>
+
+
+        <div class="container-fluid ">
+
+            <div class="welcome">
+                <h1 class="des "></h1>
+                <h1 class=" exp "></h1>
+                <h1 class=" tech"></h1>
+                <span class="word" id="word"></span>
+
+            </div>
+
+
+        </div>
+        <div class="welcome-text animated bounceIn infinite hardslower">Bienvenidos</div>
+
+        <div class="row mx-auto mt-5">
+
+
+            <div class="col-6 offset-5 ">
+
+                <div id="animation_container">
+                    <canvas id="canvas" width="90" height="114" style=" );"></canvas>
+                    <div id="dom_overlay_container" style="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+
+        </footer>
+    </a>
+
+    <script src="js/bootstrap/bootstrap.min.js "></script>
+    <script src="js/jquery-1.11.1.js "></script>
+    <script src="js/createjs.min.js"></script>
+    <script src="js/finger-touch.js"></script>
+    <script>
+        var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+
+        function init() {
+            canvas = document.getElementById("canvas");
+            anim_container = document.getElementById("animation_container");
+            dom_overlay_container = document.getElementById("dom_overlay_container");
+            var comp = AdobeAn.getComposition("A165422B629D204285CD4F07809664F6");
+            var lib = comp.getLibrary();
+            var loader = new createjs.LoadQueue(false);
+            loader.addEventListener("fileload", function(evt) {
+                handleFileLoad(evt, comp)
+            });
+            loader.addEventListener("complete", function(evt) {
+                handleComplete(evt, comp)
+            });
+            var lib = comp.getLibrary();
+            loader.loadManifest(lib.properties.manifest);
+        }
+
+        function handleFileLoad(evt, comp) {
+            var images = comp.getImages();
+            if (evt && (evt.item.type == "image")) {
+                images[evt.item.id] = evt.result;
+            }
+        }
+
+        function handleComplete(evt, comp) {
+            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+            var lib = comp.getLibrary();
+            var ss = comp.getSpriteSheet();
+            var queue = evt.target;
+            var ssMetadata = lib.ssMetadata;
+            for (i = 0; i < ssMetadata.length; i++) {
+                ss[ssMetadata[i].name] = new createjs.SpriteSheet({
+                    "images": [queue.getResult(ssMetadata[i].name)],
+                    "frames": ssMetadata[i].frames
+                })
+            }
+            exportRoot = new lib.Sintítulo1();
+            stage = new lib.Stage(canvas);
+            //Registers the "tick" event listener.
+            fnStartAnimation = function() {
+                    stage.addChild(exportRoot);
+                    createjs.Ticker.setFPS(lib.properties.fps);
+                    createjs.Ticker.addEventListener("tick", stage);
+                }
+                //Code to support hidpi screens and responsive scaling.
+            AdobeAn.makeResponsive(false, 'both', false, 1, [canvas, anim_container, dom_overlay_container]);
+            AdobeAn.compositionLoaded(lib.properties.id);
+            fnStartAnimation();
+        }
+    </script>
+
+    <script src="js/particles.js "></script>
+    <script src="js/js/app.js "></script>
+    <script>
+        var words = ['Desarrollamos Experiencias Tecnológicas', 'Proveemos Soluciones Adaptadas a tú medida'],
+            wordWrapper = document.getElementById('word'),
+            wordWrapperContent = wordWrapper.innerHTML,
+            addingWord = false,
+            counter = 1;
+
+        setInterval(function() {
+
+            if (wordWrapperContent.length > 0 && !addingWord) {
+                wordWrapper.innerHTML = wordWrapperContent.slice(0, -1);
+                wordWrapperContent = wordWrapper.innerHTML;
+            } else {
+                addingWord = true;
+            }
+
+            if (addingWord) {
+                if (wordWrapperContent.length < words[counter].length) {
+                    wordWrapper.innerHTML = words[counter].slice(0, wordWrapperContent.length + 1);
+                    wordWrapperContent = wordWrapper.innerHTML;
+                } else {
+                    if (counter < words.length) {
+                        counter++
+                    }
+                    addingWord = false;
+                }
+            }
+
+            if (counter == words.length) {
+                counter = 0;
+            }
+
+        }, 150);
+    </script>
+    <!-- stats.js -->
+    <script src="js/js/lib/stats.js "></script>
+
+
+
+</body>
+
+</html>

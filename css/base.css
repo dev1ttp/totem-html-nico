@@ -1,0 +1,134 @@
+A:link
+{
+	color: #003399
+}
+A:visited
+{
+	color: #003399
+}
+A:hover
+{
+	color: #ff3300
+}
+A
+{
+	font-family:		Verdana, Arial;
+	TEXT-DECORATION:	none
+}
+A.Menu
+{
+	background-color: 	#99cccc;
+	border:			#cccccc 1px solid;
+	color:			#003399;
+	cursor:			hand;
+	font-family:		Verdana, Arial;
+	font-size:		12pt;
+	font-weight:		normal;
+	height:			20px
+}
+BODY
+{
+	font-family:		Verdana, Arial;
+	MARGIN: 0px
+}
+BODY.FrmUp
+{
+	background-color:	#8caae6;
+	font-family:		Verdana, Arial;
+	MARGIN:			0px 5px
+}
+.CDatP
+{
+	background:		#edf2fc;
+	border-bottom:		#ffffff 5px solid;
+	color:			#0148b2;
+	font-family:		Verdana, Arial;
+	font-size:		22pt;
+	height:			40px
+}
+.CDatR
+{
+	background:		#ff0000;
+	border-bottom:		#ffffff 5px solid;
+	color:			#0148b2;
+	font-family:		Verdana, Arial;
+	font-size:		22pt;
+	height:			40px
+}
+.CDatV
+{
+	background:		#80ff00;
+	border-bottom:		#ffffff 5px solid;
+	color:			#0148b2;
+	font-family:		Verdana, Arial;
+	font-size:		22pt;
+	height:			40px
+}
+.CDat
+{
+	background:		#edf2fc;
+	border-bottom:		#ffffff 1px solid;
+	border-right:		#ffffff 1px solid;
+	color:			#0148b2;
+	font-family:		Verdana, Arial;
+	font-size:		8pt;
+	height:			18px
+}
+.Combo
+{
+	font-family:		Verdana, Arial, Helvetica;
+	font-size:		18pt;
+}
+H1
+{
+	color:			#8caae6;
+	font-family:		Verdana, Arial
+}
+H2
+{
+	color:			#8caae6;
+	font-family:		Verdana, Arial
+}
+H3
+{
+	color:			#8caae6;
+	font-family:		Verdana, Arial
+}
+.Titulo
+{
+	font-weight:		bold;
+	font-size:		18pt;
+	color:			#3366cc;
+	font-family:		Verdana, Arial
+}
+.button
+{
+	background:		#3366cc;
+	border:			white 2px outset;
+	font-weight:		bolder;
+	font-size:		8pt;
+	width:			100px;
+	height:			22px;
+	cursor:			hand;
+	color:			white;
+	font-family:		Verdana, Arial
+}
+.listbox
+{
+	background:		#ffffff;
+	border-color:		#cccccc;
+	border-style:		solid;
+	border-width:		1px;
+	color:			#0148b2;
+	height:			300px;
+	font-family:		Verdana, Arial;
+	font-size:		8pt
+}
+ .table-hover tbody tr:hover td
+	{
+		background-color: #58FA58;         
+	}
+	body
+	{
+		margin: 50px;
+	}
